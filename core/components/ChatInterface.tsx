@@ -10,7 +10,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Loader2 } from "lucide-react";
 
 const STARTER_QUESTIONS = [
@@ -55,23 +55,42 @@ export default function ChatInterface() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: input,
-          history: newMessages,
-        }),
+        body: JSON.stringify({ messages: newMessages }),
       });
 
-      if (!response.ok) throw new Error("API request failed");
+      if (!response.ok || !response.body) {
+        throw new Error("Failed to get streaming response");
+      }
 
-      const data = await response.json();
-      setMessages([...newMessages, { role: "assistant", content: data.reply }]);
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let partialMessage = "";
+
+      setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        const chunk = decoder.decode(value);
+        partialMessage += chunk;
+
+        setMessages((prevMessages) => {
+          const updated = [...prevMessages];
+          updated[updated.length - 1] = {
+            role: "assistant",
+            content: partialMessage,
+          };
+          return updated;
+        });
+      }
     } catch (error) {
-      console.error("Error:", error);
-      setMessages([
-        ...newMessages,
+      console.error("Streaming error:", error);
+      setMessages((prev) => [
+        ...prev,
         {
           role: "assistant",
-          content: "Sorry, I encountered an error. Please try again.",
+          content: "Sorry, I encountered an error. Please try again...",
         },
       ]);
     } finally {
