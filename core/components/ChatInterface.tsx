@@ -2,14 +2,14 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
+// import {
+//   Card,
+//   CardHeader,
+//   CardTitle,
+//   CardContent,
+//   CardFooter,
+// } from "@/components/ui/card";
+// import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Loader2 } from "lucide-react";
 
@@ -111,88 +111,88 @@ export default function ChatInterface() {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto shadow-lg">
-      <CardHeader className="bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-t-lg">
-        <div className="flex items-center space-x-3">
-          <Avatar>
-            <AvatarFallback className="bg-indigo-500 text-white">
-              V
-            </AvatarFallback>
-          </Avatar>
-          <CardTitle>Velvet - History Assistant</CardTitle>
-        </div>
-      </CardHeader>
+    <div className="w-full max-w-4xl mx-auto h-screen flex flex-col p-4 bg-white">
+      {/* Header */}
+      <div className="flex items-center gap-4 mb-4">
+        <Avatar>
+          <AvatarFallback className="bg-black text-white">V</AvatarFallback>
+        </Avatar>
+        <h1 className="text-xl font-bold text-bg">
+          Velvet - History Assistant
+        </h1>
+      </div>
 
-      <CardContent className="p-0">
-        <ScrollArea ref={scrollRef} className="h-[60vh] p-4">
-          {messages.map((msg, index) => (
+      {/* Chat Area */}
+      <div ref={scrollRef} className="flex-1 overflow-y-auto space-y-4 pr-1">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`flex mb-4 ${
+              msg.role === "user" ? "justify-end" : "justify-start"
+            }`}
+          >
             <div
-              key={index}
-              className={`flex mb-4 ${
-                msg.role === "user" ? "justify-end" : "justify-start"
+              className={`max-w-[80%] rounded-xl px-4 py-3 border text-sm ${
+                msg.role === "user"
+                  ? "bg-indigo-100 text-indigo-900 border-indigo-200"
+                  : "bg-white text-gray-800 border-gray-200"
               }`}
             >
-              <div
-                className={`max-w-[80%] rounded-lg p-4 ${
-                  msg.role === "user"
-                    ? "bg-indigo-100 text-indigo-900"
-                    : "bg-purple-100 text-purple-900"
-                }`}
-              >
-                {msg.content}
-              </div>
+              {msg.content}
             </div>
-          ))}
+          </div>
+        ))}
 
-          {isLoading && (
-            <div className="flex justify-start mb-4">
-              <div className="bg-purple-100 text-purple-900 rounded-lg p-4 max-w-[80%] flex items-center">
-                <Loader2 className="animate-spin mr-2" />
-                Thinking...
-              </div>
+        {isLoading && (
+          <div className="flex justify-start">
+            <div className="bg-purple-100 text-purple-900 rounded-xl px-4 py-2 flex items-center max-w-[80%] shadow-sm text-sm">
+              <Loader2 className="animate-spin mr-2 w-4 h-4" />
+              Thinking...
             </div>
-          )}
+          </div>
+        )}
 
-          {messages.length === 1 && (
-            <div className="mt-8">
-              <h3 className="text-lg font-semibold text-center mb-4">
-                How can I help you?
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {STARTER_QUESTIONS.map((q, i) => (
-                  <Button
-                    key={i}
-                    variant="outline"
-                    className="h-16 text-left justify-start whitespace-normal"
-                    onClick={() => handleStarterQuestion(q)}
-                  >
-                    {q}
-                  </Button>
-                ))}
-              </div>
+        {messages.length === 1 && (
+          <div className="mt-6">
+            <h3 className="text-center text-muted-foreground text-sm mb-4">
+              Try one of these to get started:
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {STARTER_QUESTIONS.map((q, i) => (
+                <Button
+                  key={i}
+                  variant="outline"
+                  className="justify-start text-left whitespace-normal h-auto py-3"
+                  onClick={() => handleStarterQuestion(q)}
+                >
+                  {q}
+                </Button>
+              ))}
             </div>
-          )}
-        </ScrollArea>
-      </CardContent>
+          </div>
+        )}
+      </div>
 
-      <CardFooter className="bg-gray-50 rounded-b-lg p-4">
-        <form onSubmit={handleSubmit} className="flex w-full space-x-2">
-          <Input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about any historical topic..."
-            className="flex-1"
-            disabled={isLoading}
-          />
-          <Button
-            type="submit"
-            className="bg-indigo-600 hover:bg-indigo-700"
-            disabled={isLoading || !input.trim()}
-          >
-            {isLoading ? <Loader2 className="animate-spin" /> : "Send"}
-          </Button>
-        </form>
-      </CardFooter>
-    </Card>
+      {/* Input Bar */}
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center gap-2 pt-4 border-t mt-4"
+      >
+        <Input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask Velvet a historical question..."
+          className="flex-1"
+          disabled={isLoading}
+        />
+        <Button
+          type="submit"
+          className="bg-indigo-600 hover:bg-indigo-700"
+          disabled={isLoading || !input.trim()}
+        >
+          {isLoading ? <Loader2 className="animate-spin" /> : "Send"}
+        </Button>
+      </form>
+    </div>
   );
 }

@@ -1,6 +1,9 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "velvet",
+  "version": "1.0.3",
+  "description": "It's a chatbot, but related to history alike !",
+  "author": {"name": "matthew alexander"},
+  "categories": ["AI", "Chat", "Education"],
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

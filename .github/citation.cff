@@ -1,0 +1,198 @@
+cff-version: 1.2.0
+title: Velvet
+message: 'It''s a chatbot, but related to history alike !'
+type: software
+authors:
+  - given-names: Matthew Alexander
+    family-names: Panggabean
+    email: sebastianhedforst@gmail.com
+    affiliation: State University of Surabaya
+repository-code: 'https://github.com/archangel-12/velvet'
+repository-artifact: 'https://github.com/thenothing12/kern'
+abstract: >-
+  It's a chatbot whose answers are coded and programmed to
+  prioritize the notion of history above all, and to make it
+  interesting for students by showing how fun history can be
+  through meaningful and engaging conversations.
+keywords:
+  - Education
+  - LLM
+  - Artificial Intelligence
+  - Undergrad thesis
+license: MIT
+version: 1.0.0
+date-released: '2025-05-10'
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Panggabean 
+      given-names: Matthew Alexander 
+  title: "PENGGUNAAN ARTIFICIAL INTELLIGENCE VELVET UNTUK BELAJAR SEJARAH" 
+  year: 2025
+
+references:
+  - type: article
+    authors:
+      - family-names: Almusharraf
+        given-names: N
+      - family-names: Almusharraf
+        given-names: A
+    title: "The impact of AI-powered chatbots in social studies education: A mixed-methods study"
+    journal: "Education and Information Technologies"
+    year: 2023
+    url: "https://doi.org/10.1007"
+
+  - type: article
+    authors:
+      - family-names: Alventosa
+        given-names: J. P. M
+    title: "The shallows. What the internet is doing to our brains"
+    journal: "RUSC Universities and Knowledge Society Journal"
+    volume: 9
+    issue: 1
+    year: 2012
+    url: "https://doi.org/10.7238/rusc.v9i1.1134"
+
+  - type: article
+    authors:
+      - family-names: Bender
+        given-names: E. M.
+      - family-names: Gebru
+        given-names: T.
+      - family-names: Mcmillan-Major
+        given-names: A.
+      - family-names: Shmitchell
+        given-names: S.
+      - family-names: Shmitchell
+        given-names: S.-G.
+    title: "On the dangers of stochastic parrots: Can language models be too big?"
+    journal: "CCS CONCEPTS • Computing methodologies → Natural language processing"
+    year: 2021
+    url: "https://dl.acm.org/doi/10.1145/3442188.3445922"  # Updated URL for reference
+
+  - type: article
+    authors:
+      - family-names: Feigenbaum
+        given-names: E. A.
+    title: "Expert systems: Principles and practice"
+    journal: "The Encyclopedia of Computer Science and Engineering"
+    year: 1992
+    pages: 581
+
+  - type: article
+    authors:
+      - family-names: Kantz
+        given-names: B.
+      - family-names: Wineburg
+        given-names: S.
+    title: "Historical thinking and other unnatural acts: Charting the future of teaching the past"
+    journal: "The History Teacher"
+    volume: 35
+    issue: 4
+    year: 2002
+    url: "https://doi.org/10.2307/1512489"
+
+  - type: article
+    authors:
+      - family-names: Labadze
+        given-names: L.
+      - family-names: Grigolia
+        given-names: M.
+      - family-names: Machaidze
+        given-names: L.
+    title: "Role of AI chatbots in education: Systematic literature review"
+    journal: "International Journal of Educational Technology in Higher Education"
+    volume: 20
+    issue: 1
+    year: 2023
+    url: "https://doi.org/10.1186/s41239-023-00426-1"
+
+  - type: article
+    authors:
+      - family-names: McCarthy
+        given-names: J.
+    title: "Programs with common sense"
+    journal: "Proceedings of the Symposium on the Mechanization of Thought Processes"
+    year: 1963
+
+  - type: article
+    authors:
+      - family-names: Okonkwo
+        given-names: C. W.
+      - family-names: Ade-Ibijola
+        given-names: A.
+    title: "Chatbots applications in education: A systematic review"
+    journal: "Computers and Education: Artificial Intelligence"
+    volume: 2
+    year: 2021
+    url: "https://doi.org/10.1016/j.caeai.2021.100033"
+
+  - type: article
+    authors:
+      - family-names: Radford
+        given-names: A.
+    title: "Improving language understanding by generative pre-training"
+    journal: "Homology, Homotopy and Applications"
+    volume: 9
+    issue: 1
+    year: 2018
+
+  - type: book
+    authors:
+      - family-names: Russell
+        given-names: S.
+      - family-names: Norvig
+        given-names: P.
+    title: "Artificial Intelligence: A Modern Approach"
+    edition: "Global Edition"
+    year: 2021
+
+  - type: article
+    authors:
+      - family-names: Schleicher
+        given-names: A.
+    title: "Educating learners for their future, not our past"
+    journal: "ECNU Review of Education"
+    volume: 1
+    issue: 1
+    year: 2018
+    url: "https://doi.org/10.30926/ecnuroe2018010104"
+
+  - type: article
+    authors:
+      - family-names: Selwyn
+        given-names: N.
+    title: "Education & technology. Key issues & debates"
+    journal: "Neurological Sciences: Official Journal of the Italian Neurological Society and of the Italian Society of Clinical Neurophysiology"
+    year: 2011
+    url: "https://doi.org/3636620"
+
+  - type: article
+    authors:
+      - family-names: Stiles
+        given-names: R.
+      - family-names: Charles
+        given-names: E.
+      - family-names: Lane
+        given-names: J.
+    title: "Generative AI chatbots in higher education: A review of an emerging research area"
+    journal: "Higher Education"
+    year: n.d.
+    url: "https://doi.org/10.1007/s10734-024-01288-w"
+
+  - type: article
+    authors:
+      - family-names: Turing
+        given-names: A. M.
+    title: "Computing machinery and intelligence"
+    journal: "Machine Intelligence: Perspectives on the Computational Model"
+    year: 2012
+    url: "https://doi.org/10.7551/mitpress/6928.003.0012"
+
+  - type: book
+    authors:
+      - family-names: Willingham
+        given-names: D. T.
+    title: "Why Don’t Students Like School?"
+    year: 2010
+    url: "https://doi.org/10.1002/9781118269527.ch1"
