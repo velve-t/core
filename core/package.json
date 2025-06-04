@@ -2,7 +2,9 @@
   "name": "velvet",
   "version": "1.0.3",
   "description": "It's a chatbot, but related to history alike !",
-  "author": {"name": "matthew alexander"},
+  "author": {
+    "name": "matthew alexander"
+  },
   "categories": ["AI", "Chat", "Education"],
   "private": true,
   "scripts": {
@@ -20,7 +22,7 @@
     "ai": "^4.3.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.511.0",
+    "lucide-react": "^0.512.0",
     "next": "15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
