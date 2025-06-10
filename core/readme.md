@@ -86,4 +86,5 @@ Saya selalu menyukai konsep pendekatan multidisiplin dalam pendidikan, itu membu
 | **Perbaikan Bug & Pemulihan** | Juni 2025 | Memperbaiki bug akibat copy-paste kode V0 | ✅ Selesai |
 | **Progres Saat Ini** | Juni 2025 | API-key dan sistem autentikasi berfungsi | 🔄 Dalam Proses |
 | **Hari Presentasi** | 4 Juni 2025 | Demonstrasi proyek & iterasi berlanjut | ✅ Selesai |
+| **Penulisan halaman wiki Velvet**       | 10 Juni 2025 | Penulisan halaman wiki | ✅ Selesai |
 | **Penyempurnaan Akhir** | Juni 2025 | Polishing UI, automasi Clerk, dan integrasi Supabase sebelum deployment | ⏳ Menunggu |

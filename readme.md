@@ -93,4 +93,5 @@ I’ve always liked the idea of a multidisciplinary approach to education. it ke
 | **Error Fix & Recovery** | June 2025 (5 days ago) | Fixed bugs from V0 code copy-paste mistake | ✅ Completed |
 | **Current Progress** | June 2025 | API-key authentication & sign-in flow functional | 🔄 In Progress |
 | **Presentation Day** | June 4th 2025 | Project showcase and iteration continuation | ✅ Completed |
+| **Velvet Official Wiki**       | June 10th, 2025 | Making of the wiki | ✅ Completed |
 | **Final Touches** | June 2025 – Completion | UI polish, Clerk automation, Supabase integration, and deploy it live | ⏳ Pending |
