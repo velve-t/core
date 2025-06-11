@@ -7,65 +7,30 @@ const groq = createGroq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
-function isRelevantTopic(message: string): boolean {
-  const keywords = [
-    "history",
-    "archaeology",
-    "ancient",
-    "empire",
-    "civilization",
-    "artifact",
-    "ruins",
-    "prehistoric",
-    "dynasty",
-    "monument",
-    "relic",
-    "excavation",
-    "historical",
-    "archaeological",
-    "Indonesia",
-    "Regime",
-    "Reformation",
-    "Dutch East Indies",
-    "Staged",
-    "Coup",
-    "Genocide",
-  ];
-  return keywords.some((keyword) =>
-    message.toLowerCase().includes(keyword.toLowerCase())
-  );
-}
-
 export async function POST(req: Request): Promise<Response> {
   try {
     const { messages } = await req.json();
     const lastMessage = messages[messages.length - 1]?.content || "";
-
-    if (!isRelevantTopic(lastMessage)) {
-      const encoder = new TextEncoder();
-      const stream = new ReadableStream({
-        start(controller) {
-          controller.enqueue(
-            encoder.encode(
-              "This chatbot only answers history and archaeology-related questions."
-            )
-          );
-          controller.close();
-        },
-      });
-
-      return new Response(stream, {
+    
+    if (lastMessage.trim().length < 5 || !/[a-zA-Z]/.test(lastMessage)) {
+      return new Response("Please ask a valid historical question.", {
+        status: 200,
         headers: {
           "Content-Type": "text/plain",
-          "Cache-Control": "no-cache",
-          Connection: "keep-alive",
         },
       });
     }
 
     const result = await streamText({
       model: groq("deepseek-r1-distill-llama-70b"),
-      messages,
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a helpful and knowledgeable assistant who only answers questions related to history, archaeology, and human civilizations. If the question is not relevant to those topics, politely explain that you only handle historical topics.",
+        },
+        ...messages,
+      ],
     });
 
     return new Response(result.textStream, {
