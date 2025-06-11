@@ -1,2 +1,3 @@
 - June 10th 2025 [19:38 GMT+7] = official wiki's project completed
 - June 11th 2025 [09:22 GMT+7] = package changed and slight touch to ensure if things still what it is
+- June 11th 2025 [13:09 GMT+7] = adding `text-area.tsx` and another slight ui revision although did not suceed

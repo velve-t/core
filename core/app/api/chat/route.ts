@@ -42,7 +42,6 @@ export async function POST(req: Request): Promise<Response> {
     const lastMessage = messages[messages.length - 1]?.content || "";
 
     if (!isRelevantTopic(lastMessage)) {
-      // Fallback response as a readable stream
       const encoder = new TextEncoder();
       const stream = new ReadableStream({
         start(controller) {
