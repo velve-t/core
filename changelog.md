@@ -2,3 +2,4 @@
 - June 11th 2025 [09:22 GMT+7] = package changed and slight touch to ensure if things still what it is
 - June 11th 2025 [13:09 GMT+7] = adding `text-area.tsx` and another slight ui revision although did not succeed
 - June 11th 2025 [21:24 GMT+7] = major revision on `route.ts` of which blocking the entirety of a nonsense question or not related to history
+- June 17th 2025 [12:26 GMT+7] = slight revision on the sign-in page to make it more user-friendly although not much
