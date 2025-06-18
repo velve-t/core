@@ -3,3 +3,4 @@
 - June 11th 2025 [13:09 GMT+7] = adding `text-area.tsx` and another slight ui revision although did not succeed
 - June 11th 2025 [21:24 GMT+7] = major revision on `route.ts` of which blocking the entirety of a nonsense question or not related to history
 - June 17th 2025 [12:26 GMT+7] = slight revision on the sign-in page to make it more user-friendly although not much
+- June 18th 2025 [11:37 GMT+7] = a sort of observation and a small question from the junior, as they're part of the very first group of users. no changes have been made to the user interface so far
